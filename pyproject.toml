@@ -1,11 +1,23 @@
 [project]
 name = "ep-ai"
 version = "0.1.0"
-description = "Add your description here"
+description = "AI 多模块项目 - MCP & Agent 系列"
 requires-python = ">=3.11"
-dependencies = [
-    "dotenv>=0.9.9",
+dependencies = []
+
+[dependency-groups]
+dev = [
     "jupyter>=1.1.1",
-    "sniffio>=1.3.1",
-    "zai-sdk>=0.2.0",
+    "pytest>=8.0.0",
+    "ruff>=0.9.0",
 ]
+
+[tool.uv.workspace]
+members = ["packages/*"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/ep_ai"]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
