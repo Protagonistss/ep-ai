@@ -1,10 +1,9 @@
 from dotenv import load_dotenv
-import zai
+import os
 
 def main():
-    print(zai.__version__)
-    print("Hello from ep-ai!")
-
+    load_dotenv()
+    print(os.getenv("OPENAI_API_KEY"))
 
 if __name__ == "__main__":
     main()
